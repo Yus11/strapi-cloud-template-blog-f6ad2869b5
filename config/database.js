@@ -9,7 +9,7 @@ module.exports = ({ env }) => ({
         database: env('DATABASE_NAME', 'sample_wjjk'),
         user: env('DATABASE_USERNAME', 'admin'),
         password: env('DATABASE_PASSWORD', '8yoES2j6eLsRsVKGYwp4VG4COWuKWQ0G'),
-        ssl: env.bool('DATABASE_SSL', true),
+        ssl: { rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), },
       },
     },
 });
